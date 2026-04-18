@@ -1,0 +1,56 @@
+{
+  "tickets": [
+    {
+      "id": "5e37bab4-13f1-4b97-b8b2-3776f844e7c5",
+      "title": "Problema 1",
+      "description": "Ocurrió un error en el sistema",
+      "status": "asignado",
+      "priority": "medium",
+      "assignedUser": "Mafer"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "a1213da3-f327-487a-9262-1a6ebb8cb3c9",
+      "type": "email",
+      "message": "Nuevo ticket creado: Problema 1",
+      "status": "pending",
+      "ticketId": "de3d0d16-ecc2-490b-a41e-307f8f7f1052"
+    },
+    {
+      "id": "aaa74798-3ed6-4cb8-a7d7-e01a29a74acf",
+      "type": "email",
+      "message": "El ticket de3d0d16-ecc2-490b-a41e-307f8f7f1052 fue asignado a Mafer",
+      "status": "pending",
+      "ticketId": "de3d0d16-ecc2-490b-a41e-307f8f7f1052"
+    },
+    {
+      "id": "5df5ba96-0b63-4178-839a-dddd6af172b1",
+      "type": "push",
+      "message": "El ticket de3d0d16-ecc2-490b-a41e-307f8f7f1052 cambió a asignado",
+      "status": "pending",
+      "ticketId": "de3d0d16-ecc2-490b-a41e-307f8f7f1052"
+    },
+    {
+      "id": "3bd15470-91d9-4e50-b6ea-8c676fc1831d",
+      "type": "email",
+      "message": "Nuevo ticket creado: Problema 1",
+      "status": "pending",
+      "ticketId": "5e37bab4-13f1-4b97-b8b2-3776f844e7c5"
+    },
+    {
+      "id": "38785d6f-a591-418c-ae31-e36dd390843a",
+      "type": "email",
+      "message": "El ticket 5e37bab4-13f1-4b97-b8b2-3776f844e7c5 fue asignado a Mafer",
+      "status": "pending",
+      "ticketId": "5e37bab4-13f1-4b97-b8b2-3776f844e7c5"
+    },
+    {
+      "id": "903a2e57-cf4d-4ef0-9c51-5c9d0f6450e2",
+      "type": "push",
+      "message": "El ticket 5e37bab4-13f1-4b97-b8b2-3776f844e7c5 cambió a asignado",
+      "status": "pending",
+      "ticketId": "5e37bab4-13f1-4b97-b8b2-3776f844e7c5"
+    }
+  ]
+}
