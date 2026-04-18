@@ -8,7 +8,7 @@ class TicketService {
     this.notificationService = new NotificationService();
   }
 
-  createTicket(data) {
+  async createTicket(data) {
     const ticket = {
       id: uuidv4(),
       title: data.title,
@@ -19,30 +19,27 @@ class TicketService {
     };
 
     this.repo.save(ticket);
-    this.notificationService.create("email", `Nuevo ticket creado: ${ticket.title}`, ticket.id);
+    await this.notificationService.create("email", `Nuevo ticket creado: ${ticket.title}`, ticket.id);
 
     return ticket;
   }
 
-  assignTicket(id, user) {
+  async assignTicket(id, user) {
     const ticket = this.repo.update(id, { assignedUser: user });
     if (ticket) {
-      this.notificationService.create("email", `El ticket ${ticket.id} fue asignado a ${user}`, ticket.id);
+      await this.notificationService.create("email", `El ticket ${ticket.id} fue asignado a ${user}`, ticket.id);
     }
     return ticket;
   }
 
-  changeStatus(id, newStatus) {
+  async changeStatus(id, newStatus) {
     const ticket = this.repo.update(id, { status: newStatus });
     if (ticket) {
-      this.notificationService.create("push", `El ticket ${ticket.id} cambió a ${newStatus}`, ticket.id);
+      await this.notificationService.create("push", `El ticket ${ticket.id} cambió a ${newStatus}`, ticket.id);
     }
     return ticket;
   }
 
-  list() {
-    return this.repo.findAll();
-  }
 
   deleteTicket(id) {
     const deleted = this.repo.delete(id);
@@ -57,6 +54,10 @@ class TicketService {
     const endIndex = page * limit;
     
     return allTickets.slice(startIndex, endIndex);
+  }
+
+  getNotificationsByTicket(ticketId) {
+    return this.notificationService.findByTicketId(ticketId);
   }
 }
 

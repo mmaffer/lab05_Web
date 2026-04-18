@@ -7,6 +7,38 @@
       "status": "asignado",
       "priority": "medium",
       "assignedUser": "Mafer"
+    },
+    {
+      "id": "a9965757-9951-409e-bdfd-a1cc9e90c824",
+      "title": "Error en login",
+      "description": "El botón no responde",
+      "status": "nuevo",
+      "priority": "medium",
+      "assignedUser": null
+    },
+    {
+      "id": "d704d8f8-2dc0-4d62-a1b3-8c20aa103bb0",
+      "title": "Prueba final de laboratorio",
+      "description": "Si recibes este correo, ¡tu API funciona perfecto!",
+      "status": "nuevo",
+      "priority": "high",
+      "assignedUser": null
+    },
+    {
+      "id": "0e3aa34d-b661-4ced-a032-1c9b30686cb7",
+      "title": "Prueba final de laboratorio",
+      "description": "Si recibes este correo, ¡tu API funciona perfecto!",
+      "status": "nuevo",
+      "priority": "high",
+      "assignedUser": null
+    },
+    {
+      "id": "bbda2ab2-24a3-414b-8a7c-50b343d3ad63",
+      "title": "Prueba final de laboratorio",
+      "description": "Si recibes este correo, ¡tu API funciona perfecto!",
+      "status": "nuevo",
+      "priority": "high",
+      "assignedUser": null
     }
   ],
   "notifications": [
@@ -51,6 +83,27 @@
       "message": "El ticket 5e37bab4-13f1-4b97-b8b2-3776f844e7c5 cambió a asignado",
       "status": "pending",
       "ticketId": "5e37bab4-13f1-4b97-b8b2-3776f844e7c5"
+    },
+    {
+      "id": "e498c48e-92f9-448c-a566-a55afe622dde",
+      "type": "email",
+      "message": "Nuevo ticket creado: Error en login",
+      "status": "pending",
+      "ticketId": "a9965757-9951-409e-bdfd-a1cc9e90c824"
+    },
+    {
+      "id": "f2f59604-1651-42a4-b7fc-4e955034d612",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba final de laboratorio",
+      "status": "pending",
+      "ticketId": "d704d8f8-2dc0-4d62-a1b3-8c20aa103bb0"
+    },
+    {
+      "id": "d9506ab2-64dc-40b0-8c5f-f1c103de448e",
+      "type": "email",
+      "message": "Nuevo ticket creado: Prueba final de laboratorio",
+      "status": "pending",
+      "ticketId": "bbda2ab2-24a3-414b-8a7c-50b343d3ad63"
     }
   ]
 }

@@ -8,7 +8,7 @@ class NotificationService {
     this.emailService = new EmailService();
   }
 
-  create(type, message, ticketId) {
+  async create(type, message, ticketId) {
     const notification = {
       id: uuidv4(),
       type,
@@ -18,8 +18,8 @@ class NotificationService {
     };
 
     if (type == "email") {
-      this.emailService.sendEmail({
-        to: "jefferson.ig.ig@gmail.com ", 
+      await this.emailService.sendEmail({
+        to: "wiskasgatunas@gmail.com", 
         subject: "API RESTful - Alertas del sistema de Tickets", 
         htmlBody: "<h1>" + message +" </h1>" 
       });

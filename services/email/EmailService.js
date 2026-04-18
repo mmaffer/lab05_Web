@@ -16,27 +16,21 @@ constructor() {
     });
   }
 
-  sendEmail( options ) {
-
+  async sendEmail( options ) {
     const { to, subject, htmlBody } = options;
 
     try {
-      this.transporter.sendMail( {
+      const info = await this.transporter.sendMail({
         to: to,
         subject: subject,
         html: htmlBody
-      })
-      .then((info) => {
-        console.log(" Email enviado:", info.response); 
-      }).catch((err) => {
-        console.error("Error enviando el email:", err); 
       });
-
+      console.log(" Email enviado:", info.response); 
       return true;
     } catch ( error ) {
+      console.error("Error enviando el email:", error); 
       return false;
     }
-
   }
 }
 

@@ -1,36 +1,46 @@
 const TicketService = require("../services/TicketService");
 const service = new TicketService();
 
-exports.create = (req, res) => {
-  const ticket = service.createTicket(req.body);
+exports.create = async (req, res) => {
+  const ticket = await service.createTicket(req.body);
   res.status(201).json(ticket);
 };
 
 exports.list = (req, res) => {
-  res.status(200).json(service.list());
+  const { page, limit } = req.query;
+  const tickets = service.list(
+    page ? Number(page) : undefined,
+    limit ? Number(limit) : undefined
+  );
+  res.status(200).json(tickets);
 };
 
-exports.assign = (req, res) => {
+exports.assign = async (req, res) => {
   const { id } = req.params;
   const { user } = req.body;
-  const ticket = service.assignTicket(id, user);
+  const ticket = await service.assignTicket(id, user);
   if (!ticket) return res.status(404).json({ error: "Ticket no encontrado" });
   res.status(200).json(ticket);
 };
 
-exports.changeStatus = (req, res) => {
+exports.changeStatus = async (req, res) => {
   const { id } = req.params;
   const { status } = req.body;
-  const ticket = service.changeStatus(id, status);
+  const ticket = await service.changeStatus(id, status);
   if (!ticket) return res.status(404).json({ error: "Ticket no encontrado" });
   res.status(200).json(ticket);
 };
 
-exports.delete = (req, res) => {
+exports.delete = async (req, res) => {
   try {
-    service.deleteTicket(req.params.id);
+    await service.deleteTicket(req.params.id);
     res.json({ message: "Ticket eliminado correctamente" });
   } catch (err) {
     res.status(404).json({ message: err.message });
   }
 }
+exports.getNotificationsByTicket = (req, res) => {
+  const { id } = req.params;
+  const notifications = service.getNotificationsByTicket(id);
+  res.status(200).json(notifications);
+};
